@@ -10,8 +10,8 @@ def start(update, context):
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     # Отправляем приветственное сообщение
-    context.bot.send_message(chat_id=update.effective_chat.id, text="Добро пожаловать! Чтобы оплатить курс, нажмите кнопку 'Купить'.", reply_markup=reply_markup)
 
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo=open('hello.jpg', 'rb'), caption="Добро пожаловать!\nДля оплаты нажмите 'Купить'.", reply_markup=reply_markup)
     # Отправляем кнопку пользователю
     # context.bot.send_message(chat_id=update.effective_chat.id, text="Выберите действие:", reply_markup=reply_markup)
 
@@ -20,21 +20,21 @@ def button_click(update, context):
     query = update.callback_query
     if query.data == 'buy':
         # Генерируем счет с деталями платежа
-        invoice_text = "Оплата за товар"
-        invoice_amount = 100.0
+        invoice_text = "Это руководство позволит Вам самостоятельно создать грамотную и комфортную планировку и расстановку мебели."
+        invoice_amount = 1800.0
         invoice_currency = "RUB"
         invoice_payload = "some_payload"
 
         # Отправляем счет пользователю
         # Отправляем счет пользователю
         context.bot.send_invoice(chat_id=query.message.chat_id,
-                                title="Оплата",
+                                title="Оплата за гайд Linii Interior",
                                 description=invoice_text,
                                 payload=invoice_payload,
                                 provider_token='381764678:TEST:61187',
                                 currency=invoice_currency,
                                 start_parameter='start_parameter',
-                                prices=[LabeledPrice('Руб', 10000)])
+                                prices=[LabeledPrice('Руб', 180000)])
 
 # Функция-обработчик PreCheckoutQuery
 def pre_checkout_query(update, context):
