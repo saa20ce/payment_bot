@@ -11,7 +11,7 @@ def start(update, context):
 
     # Отправляем приветственное сообщение
 
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo=open('hello.jpg', 'rb'), caption="Добро пожаловать!\nДля оплаты нажмите 'Купить'.", reply_markup=reply_markup)
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo=open('hello.jpg', 'rb'), caption="Добро пожаловать!\nПолучите гайд «Планировка без дизайнера интерьера»\nПервые 100 человек могут приобрести со скидкой!‌\nДалее скидка исчезнет. \nДля оплаты нажмите 'Купить'.", reply_markup=reply_markup)
     # Отправляем кнопку пользователю
     # context.bot.send_message(chat_id=update.effective_chat.id, text="Выберите действие:", reply_markup=reply_markup)
 
