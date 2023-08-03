@@ -31,7 +31,7 @@ def button_click(update, context):
                                 title="Оплата за гайд Linii Interior",
                                 description=invoice_text,
                                 payload=invoice_payload,
-                                provider_token='381764678:TEST:61187',
+                                provider_token='390540012:LIVE:37855',
                                 currency=invoice_currency,
                                 start_parameter='start_parameter',
                                 prices=[LabeledPrice('Руб', 180000)])
