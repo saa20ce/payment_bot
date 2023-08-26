@@ -48,10 +48,10 @@ def successful_payment(update, context):
     message = update.message
 
     # Проверяем, что платеж успешен
-    if message.successful_payment.total_amount == 10000 and message.successful_payment.currency == 'RUB':
+    if message.successful_payment.total_amount == 180000 and message.successful_payment.currency == 'RUB':
         # Определяем путь к файлу course.pdf
         current_dir = os.getcwd()
-        file_path = os.path.join(current_dir, 'course.pdf')
+        file_path = os.path.join(current_dir, 'guide.pdf')
         # Отправляем файл course.pdf пользователю
         context.bot.send_document(chat_id=message.chat_id, document=open(file_path, 'rb'))
 
